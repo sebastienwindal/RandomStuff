@@ -1,4 +1,4 @@
-# Useful unix commands for iOS dev
+# Useful unix commands cheat list
 
 ## xxd
 
