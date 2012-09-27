@@ -65,3 +65,7 @@ Specify different app:
 ```
 open -a "Sublime Text 2" file.txt
 ```
+
+## curl basics
+
+I really need to write this one...
