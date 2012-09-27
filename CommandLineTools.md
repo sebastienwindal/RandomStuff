@@ -69,3 +69,20 @@ open -a "Sublime Text 2" file.txt
 ## curl basics
 
 I really need to write this one...
+
+
+### POST 
+
+Post url encoded data
+```
+curl --data "param1=value1&param2=value2" http://example.com/resource.cgi
+```
+
+```
+curl --form "fileupload=@filename.txt" http://example.com/resource.cgi
+```
+
+Post/upload content of a file:
+```
+curl -X POST -d @filename http://example.com/path/to/resource
+```
