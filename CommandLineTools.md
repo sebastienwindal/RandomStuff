@@ -29,3 +29,39 @@ and you get:
   <message>[unauthorized]. The token used in the OAuth request is not valid. 97fae845-4e7b-4457-a6c1-7f68069e6986</message>
 </error>
 ```
+
+## python
+
+Very quickly share a file with someone. In the folder containing the file, run
+
+```
+python -m SimpleHTTPServer
+```
+
+you get:
+
+```
+Serving HTTP on 0.0.0.0 port 8000 ...
+```
+
+all files in the folder are now accessible though http://youip:8000/
+
+## open
+
+open finder from the terminal at the current folder:
+
+```
+open .
+```
+
+Tired of vi, open a file in default text editor:
+
+```
+open -t file.txt
+```
+
+Specify different app:
+
+```
+open -a "Sublime Text 2" file.txt
+```
