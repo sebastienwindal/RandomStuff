@@ -1,10 +1,10 @@
-# Useful unix commands cheat list
+# MAC OSX terminal commands cheat list
 
 ## xxd
 
 Use **xxd -r -p** to convert memory hex bytes into readable text.
 
-For instance, to get the content of a REST response buffer stored in a NSConcreteMutableData at address (0x08654860), lldb will return:
+For instance, to troubleshoot the content of a REST response buffer stored in a NSConcreteMutableData at address (0x08654860), in XCode debugger window, lldb will return:
 
 ```
 (lldb) po 0x08654860
@@ -19,7 +19,7 @@ echo "3c3f786d 6c207665 7273696f 6e3d2231 (...)" | xxd -r -p
 
 and you get:
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <error>
   <status>401</status>
@@ -32,7 +32,7 @@ and you get:
 
 ## python
 
-Very quickly share a file with someone. In the folder containing the file, run
+Very quickly share a file with someone. In the folder containing the file(s), run
 
 ```
 python -m SimpleHTTPServer
@@ -44,7 +44,7 @@ you get:
 Serving HTTP on 0.0.0.0 port 8000 ...
 ```
 
-all files in the folder are now accessible though http://youip:8000/
+all files in the folder are now accessible though http://yourIP:8000/
 
 ## open
 
@@ -54,7 +54,7 @@ open finder from the terminal at the current folder:
 open .
 ```
 
-Tired of vi, open a file in default text editor:
+Tired of vi, open a file in default text editor from the terminal:
 
 ```
 open -t file.txt
@@ -66,23 +66,88 @@ Specify different app:
 open -a "Sublime Text 2" file.txt
 ```
 
-## curl basics
+## curl by example
 
 I really need to write this one...
 
+### GET
+
+Simple GET
+
+```
+curl http://www.strava.com/api/v2/rides/22050558
+```
+
+result:
+
+```json
+{
+    "id":"22050558",
+    "ride":
+    {
+        "id":22050558,
+        "name":"BBC 100 - wheelsucker mode",
+        "start_date_local":"2012-09-15T07:55:28Z",
+        "elapsed_time":16220,
+        "moving_time":16182,
+        "distance":164942.0,
+        "average_speed":10.192930416512175,
+        "elevation_gain":1243.6,
+        "location":"Cartersville, GA",
+        "start_latlng":[34.253977769985795,-84.78729735128582],
+        "end_latlng":[34.25395907834172,-84.78736960329115]
+    },
+    "version":"1347734144"
+}
+```
 
 ### POST 
 
-Post url encoded data
+Post url encoded data (-d or --data flag), in this case login to a Strava REST service:
+
 ```
-curl --data "param1=value1&param2=value2" http://example.com/resource.cgi
+curl -X POST -d "email=xxx@xxx.com" -d "password=xxxxxx" https://www.strava.com/api/v2/authentication/login
 ```
+
+response:
+
+```json
+{
+    "token":"ffffffffffffffff",
+    "athlete":
+    {
+        "id":12405,
+        "name":"S\u00e9bastien Windal",
+        "agreed_to_terms":true,
+        "super_user":false,
+        "iphone_tester":false,
+        "push_token":"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+        "default_settings":
+        {
+            "sample_rate":3,
+            "continuous_gps":true,
+            "accuracy":0,
+            "distance_filter":3,
+            "max_search_time":30,
+            "min_stale_time":300,
+            "min_accuracy":150,
+            "map_threshold":25,
+            "max_sync_time":60,
+            "max_waypoint_stale_time":300,
+            "update_ride_poll_interval":2
+        }
+    },
+    "activity_data":[]
+}
+```
+
+Post Form data (useful to upload file) --form or -F flag:
 
 ```
 curl --form "fileupload=@filename.txt" http://example.com/resource.cgi
 ```
 
-Post/upload content of a file:
-```
-curl -X POST -d @filename http://example.com/path/to/resource
-```
+
+## tcpdump
+
+TODO
