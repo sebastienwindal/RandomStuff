@@ -150,4 +150,22 @@ curl --form "fileupload=@filename.txt" http://example.com/resource.cgi
 
 ## tcpdump
 
-TODO
+My most commonly used tcpdump command:
+
+```
+sudo tcpdump -X -n -i en1 'tcp port 80'
+```
+
+* -X - dumps packet payload (both in hex and ASCII), not just header
+
+* -n - this flag speeds things up, it prevents tcpdump to DNS resolve SRC and DST IP addresses
+* -i en1 - tells to listen to inteface en1, my wifi interface. Run the ifconfig command to see which interface is configured with a valid IP and adjust accordingly.
+* 'tcp port 80' - tells to listen HTTP traffic. The syntax is the pcap filter syntax described in man pcap-filter. Other common filters:
+** dst net <ipaddress>    - to only see your request to <ipaddress>
+** src net <ipaddress>    - to only see <ipaddress> response
+
+other options:
+* -A - dumps packet in ASCII only
+* -s 1500 - only captures 1500 bytes per packet instead of 65536 (1500 is the max ethernet MTU).
+* -x - same as -X but only dumps hex
+* -l - Make stdout line buffered.  use it if you are going to massage and filter output using grep or sed.
