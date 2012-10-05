@@ -1,4 +1,4 @@
-#sublime text plugins
+#sublime text 2 plugins
 
 Before being able to install packages, you must install the [Sublime package control] (http://wbond.net/sublime_packages/package_control)! Direct [link to installation page] (http://wbond.net/sublime_packages/package_control/installation).
 
