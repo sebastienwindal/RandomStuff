@@ -7,3 +7,4 @@ Once it is done, just run **SHIFT + CMD + P** and type **Install Package**.
 
 * git
 * Markdown Preview
+* ?
