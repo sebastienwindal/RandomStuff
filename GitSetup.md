@@ -3,6 +3,6 @@
 * add a link to sublime text in your home bin folder. 
 ``ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl``
 
-* Make sure  ~/bin is in your path. See .bash_profile for that.
+* Make sure  ~/bin is in your path. See [.bash_profile](.bash_profile ".bash_profile")  for that.
 * run ``git config --global core.editor "subl -n -w"``
 
