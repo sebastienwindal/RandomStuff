@@ -1,3 +1,5 @@
+#.bash_profile
+
 export PATH=~/bin/:$PATH
 
 alias st='open -a "Sublime Text 2"'
