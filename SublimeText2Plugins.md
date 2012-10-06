@@ -5,6 +5,12 @@ Before being able to install packages, you must install the [Sublime package con
 
 Once it is done, just run **SHIFT + CMD + P** and type **Install Package**.
 
+## general purpose
 * git
 * Markdown Preview
-* ?
+
+## android
+
+* Sublime java
+
+# web
