@@ -170,3 +170,44 @@ other options:
 * -s 1500 - only captures 1500 bytes per packet instead of 65536 (1500 is the max ethernet MTU).
 * -x - same as -X but only dumps hex
 * -l - Make stdout line buffered.  use it if you are going to massage and filter output using grep or sed.
+
+## sips
+
+Command line resizing tool.
+
+typical usage, resize an image:
+
+```
+sips --resampleWidth newWidth myimage@2x.png --out myimage.png
+```
+
+get the width of an image:
+
+```
+sips -g pixelWidth myimage.png
+```
+
+automatic resizing of all images in current folder:
+
+```bash
+#!/bin/bash
+# Downsamples all retina ...@2x.png images.
+
+echo "Downsampling retina images..."
+
+dir=$(pwd)
+find "$dir" -name "*@2x.png" | while read image; do
+
+    outfile=$(dirname "$image")/$(basename "$image" @2x.png).png
+
+    if [ "$image" -nt "$outfile" ]; then
+        basename "$outfile"
+
+        width=$(sips -g "pixelWidth" "$image" | awk 'FNR>1 {print $2}')
+        height=$(sips -g "pixelHeight" "$image" | awk 'FNR>1 {print $2}')
+        sips -z $(($height / 2)) $(($width / 2)) "$image" --out "$outfile"
+
+        test "$outfile" -nt "$image" || exit 1
+    fi
+done
+```
