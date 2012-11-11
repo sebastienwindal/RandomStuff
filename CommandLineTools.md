@@ -13,7 +13,7 @@ For instance, to troubleshoot the content of a REST response buffer stored in a 
 
 To convert it, use the command:
 
-```
+```bash
 echo "3c3f786d 6c207665 7273696f 6e3d2231 (...)" | xxd -r -p
 ```
 
@@ -34,7 +34,7 @@ and you get:
 
 Very quickly share a file with someone. In the folder containing the file(s), run
 
-```
+```bash
 python -m SimpleHTTPServer
 ```
 
@@ -50,19 +50,19 @@ all files in the folder are now accessible though http://yourIP:8000/
 
 open finder from the terminal at the current folder:
 
-```
+```bash
 open .
 ```
 
 Tired of vi, open a file in default text editor from the terminal:
 
-```
+```bash
 open -t file.txt
 ```
 
 Specify different app:
 
-```
+```bash
 open -a "Sublime Text 2" file.txt
 ```
 
@@ -74,7 +74,7 @@ I really need to write this one...
 
 Simple GET
 
-```
+```bash
 curl http://www.strava.com/api/v2/rides/22050558
 ```
 
@@ -105,7 +105,7 @@ result:
 
 Post url encoded data (-d or --data flag), in this case login to a Strava REST service:
 
-```
+```bash
 curl -X POST -d "email=xxx@xxx.com" -d "password=xxxxxx" https://www.strava.com/api/v2/authentication/login
 ```
 
@@ -143,7 +143,7 @@ response:
 
 Post Form data (useful to upload file) --form or -F flag:
 
-```
+```bash
 curl --form "fileupload=@filename.txt" http://example.com/resource.cgi
 ```
 
@@ -152,7 +152,7 @@ curl --form "fileupload=@filename.txt" http://example.com/resource.cgi
 
 My most commonly used tcpdump command:
 
-```
+```bash
 sudo tcpdump -X -n -i en1 'tcp port 80'
 ```
 
@@ -177,13 +177,13 @@ Command line resizing tool.
 
 typical usage, resize an image:
 
-```
+```bash
 sips --resampleWidth newWidth myimage@2x.png --out myimage.png
 ```
 
 get the width of an image:
 
-```
+```bash 
 sips -g pixelWidth myimage.png
 ```
 
