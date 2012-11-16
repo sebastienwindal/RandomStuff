@@ -214,8 +214,8 @@ done
 
 ## magic !number command
 
-```
-SWINDAL-MAC:impress.js swindal$ history | grep sips
+```bash
+history | grep sips
   391  sips
   394  sips -s format png --resampleWidth  480 GoogleSpreadSheet.fullsize.png --out GoogleSpreadSheet.png
   395  sips -s format png --resampleWidth 960 GoogleSpreadSheet.fullsize.png --out GoogleSpreadSheet@2x.png
