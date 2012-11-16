@@ -173,7 +173,7 @@ other options:
 
 ## sips
 
-Command line resizing tool.
+Command line image resizing tool.
 
 typical usage, resize an image:
 
@@ -211,3 +211,26 @@ find "$dir" -name "*@2x.png" | while read image; do
     fi
 done
 ```
+
+## magic !number command
+
+```
+SWINDAL-MAC:impress.js swindal$ history | grep sips
+  391  sips
+  394  sips -s format png --resampleWidth  480 GoogleSpreadSheet.fullsize.png --out GoogleSpreadSheet.png
+  395  sips -s format png --resampleWidth 960 GoogleSpreadSheet.fullsize.png --out GoogleSpreadSheet@2x.png
+  402  sips -s format png --resampleWidth 960 GoogleSpreadSheetColors.fullsize.png --out GoogleSpreadSheetColors@2x.png
+  405  sips -s format png --resampleWidth 480 GoogleSpreadSheetColors.fullsize.png --out GoogleSpreadSheetColors@.png
+  409  sips -s format png --resampleWidth 480 GoogleSpreadSheetColors.fullsize.png --out GoogleSpreadSheetColors.png
+  410  sips -s format png --resampleWidth 960 GoogleSpreadSheetColors.fullsize.png --out GoogleSpreadSheetColors@2x.png
+  429  sips -s format png --resampleWidth 320 ScreenShot1\@2x.png --out ScreenShot1.png
+  430  sips -s format png --resampleWidth 320 ScreenShot2\@2x.png --out ScreenShot2.png
+  431  sips -s format png --resampleWidth 320 ScreenShot3\@2x.png --out ScreenShot3.png
+  546  history | grep sips
+```
+
+running
+```bash
+!394
+```
+will run that command again.
