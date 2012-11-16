@@ -1,5 +1,14 @@
 # MAC OSX terminal commands cheat list
 
+##### Table of Contents 
+[xxd](#xxd)
+[python](#python)
+[open](#open)
+[curl](#curl)
+[tcpdump](#tcpdump)
+[sips](#sips)
+
+<a name="xxd"/>
 ## xxd
 
 Use **xxd -r -p** to convert memory hex bytes into readable text.
@@ -29,7 +38,7 @@ and you get:
   <message>[unauthorized]. The token used in the OAuth request is not valid. 97fae845-4e7b-4457-a6c1-7f68069e6986</message>
 </error>
 ```
-
+<a name="python" />
 ## python
 
 Very quickly share a file with someone. In the folder containing the file(s), run
@@ -46,6 +55,7 @@ Serving HTTP on 0.0.0.0 port 8000 ...
 
 all files in the folder are now accessible though http://yourIP:8000/
 
+<a name="open" />
 ## open
 
 open finder from the terminal at the current folder:
@@ -66,6 +76,7 @@ Specify different app:
 open -a "Sublime Text 2" file.txt
 ```
 
+<a name="curl"/>
 ## curl by example
 
 I really need to write this one...
@@ -147,7 +158,7 @@ Post Form data (useful to upload file) --form or -F flag:
 curl --form "fileupload=@filename.txt" http://example.com/resource.cgi
 ```
 
-
+<a name="tcpdump" />
 ## tcpdump
 
 My most commonly used tcpdump command:
@@ -171,6 +182,7 @@ other options:
 * -x - same as -X but only dumps hex
 * -l - Make stdout line buffered.  use it if you are going to massage and filter output using grep or sed.
 
+<a name="sips" />
 ## sips
 
 Command line image resizing tool.
@@ -211,7 +223,7 @@ find "$dir" -name "*@2x.png" | while read image; do
     fi
 done
 ```
-
+<a name="magicbang"/>
 ## magic !number command
 
 ```bash
