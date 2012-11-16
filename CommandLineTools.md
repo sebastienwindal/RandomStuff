@@ -7,6 +7,7 @@
 - [curl](#curl)
 - [tcpdump](#tcpdump)
 - [sips](#sips)
+- [magic !](#magicbang)
 
 <a name="xxd"/>
 ## xxd
