@@ -1,12 +1,12 @@
 # MAC OSX terminal commands cheat list
 
 ##### Table of Contents 
-[xxd](#xxd)
-[python](#python)
-[open](#open)
-[curl](#curl)
-[tcpdump](#tcpdump)
-[sips](#sips)
+- [xxd](#xxd)
+- [python](#python)
+- [open](#open)
+- [curl](#curl)
+- [tcpdump](#tcpdump)
+- [sips](#sips)
 
 <a name="xxd"/>
 ## xxd
