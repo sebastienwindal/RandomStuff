@@ -106,9 +106,11 @@ In the object that needs to be notified, for instance a UIViewController.
 #import "UIViewController1.h"
 #import "BigCalculator1.h"
 
+// we are specifying we are a BigCalculatorDelegate
 @interface UIViewController1 () <BigCalculatorDelegate>
 
 @property (nonatomic, strong) BigCalculator1 *bigCalculator;
+
 @end
 
 @implementation UIViewController1
@@ -125,7 +127,8 @@ In the object that needs to be notified, for instance a UIViewController.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
+    // we set ourselves as the delegate of big calculator
     self.bigCalculator = [[BigCalculator1 alloc] init];
     self.bigCalculator.delegate = self;
 }
@@ -137,6 +140,9 @@ In the object that needs to be notified, for instance a UIViewController.
 }
 
 #pragma mark BigCalculatorDelegate
+
+// we implement the BigCalculatorDelegate methods, because we set ourslef as bigCalculator.delegate we will be
+// called by big calculator
 
 -(void) bigCalculator:(BigCalculator1 *)calculator madeProgressOnCalculation:(float)percentProgress
 {
@@ -150,20 +156,21 @@ In the object that needs to be notified, for instance a UIViewController.
 }
 
 @end
+
 ```
 
 
-
 ### notes:
-That BigCalculator does not know anything about the registered object other that it implements the two methods defined in the BigCalculatorDelegate protocol.
+
+BigCalculator does not know anything about the registered object other that it implements the two methods defined in the BigCalculatorDelegate protocol.
 
 Delegation is the most used pattern in iOS. It fits well and should be your default pattern for any in "child notifies parent" scenarios especially:
 * View -> ViewController
 * ViewController -> parent ViewController
 
 It does not work so well:
-* when an object needs to notify multiple objects e.g. our backend object just lose network connectivity and many different subsystems must adjust their UI as a result by becoming read-only
-* When the object that needs to be notified is your parent but many, many generation down e.g. you need to tell your great-great-great grand parent view controller you changed something. In this case, each one of the view controller in the chain would have to implement delegation to pass the information all the way down).
+* when an object needs to notify multiple objects (since you can only have one delegate) e.g. a backend object just lost network connectivity and many different subsystems must adjust their UI as a result by becoming read-only.
+* When the object that needs to be notified is your parent but many, many generation up e.g. you need to tell your great-great-great grand parent view controller you changed something. In this case, each one of the view controller in the chain would have to implement delegation to pass the information all the way up).
 
 ### Examples in cocoa
 
