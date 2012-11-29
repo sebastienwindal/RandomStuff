@@ -100,6 +100,59 @@ typically called *delegate*.
 @end
 ```
 
+In the object that needs to be notified, for instance a UIViewController.
+
+```objC
+#import "UIViewController1.h"
+#import "BigCalculator1.h"
+
+@interface UIViewController1 () <BigCalculatorDelegate>
+
+@property (nonatomic, strong) BigCalculator1 *bigCalculator;
+@end
+
+@implementation UIViewController1
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.bigCalculator = [[BigCalculator1 alloc] init];
+    self.bigCalculator.delegate = self;
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark BigCalculatorDelegate
+
+-(void) bigCalculator:(BigCalculator1 *)calculator madeProgressOnCalculation:(float)percentProgress
+{
+    // update UI to increase progress (in foreground thread!)
+    
+}
+
+-(void) bigCalculator:(BigCalculator1 *)calculator didFinishOperationWithResult:(float)result
+{
+    // update UI to show calculation result (in foreground thread!)
+}
+
+@end
+```
+
+
 
 ### notes:
 That BigCalculator does not know anything about the registered object other that it implements the two methods defined in the BigCalculatorDelegate protocol.
