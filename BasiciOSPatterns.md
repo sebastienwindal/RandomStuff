@@ -39,11 +39,9 @@ typically called *delegate*.
 @protocol BigCalculatorDelegate <NSObject>
 
 @required
-
 -(void) bigCalculator:(BigCalculator1 *)calculator didFinishOperationWithResult:(float)result;
 
 @optional
-
 -(void) bigCalculator:(BigCalculator1 *)calculator madeProgressOnCalculation:(float)percentProgress;
 
 @end
@@ -59,7 +57,7 @@ typically called *delegate*.
 ```
 
 ```objC
-BigCalculator1.m
+// BigCalculator1.m
 
 @implementation BigCalculator1
 {
