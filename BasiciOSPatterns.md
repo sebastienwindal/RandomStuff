@@ -76,33 +76,33 @@ typically called *delegate*.
 {
     [NSThread sleepForTimeInterval:1.0]; // sleep for one second
     if ([self.delegate respondsToSelector:@selector(bigCalculator:madeProgressOnCalculation:)]) {
-        [self.delegate bigCalculator:self didFinishOperationWithResult:0.25];
+        [self.delegate bigCalculator:self didFinishOperationWithResult:0.25]; // 25% done
     }
     
     [NSThread sleepForTimeInterval:1.0]; // sleep for one second
     if ([self.delegate respondsToSelector:@selector(bigCalculator:madeProgressOnCalculation:)]) {
-        [self.delegate bigCalculator:self didFinishOperationWithResult:0.5];
+        [self.delegate bigCalculator:self didFinishOperationWithResult:0.5]; // 50% done
     }
 
     [NSThread sleepForTimeInterval:1.0]; // sleep for one second
     if ([self.delegate respondsToSelector:@selector(bigCalculator:madeProgressOnCalculation:)]) {
-        [self.delegate bigCalculator:self didFinishOperationWithResult:0.75];
+        [self.delegate bigCalculator:self didFinishOperationWithResult:0.75]; // 75% done
     }
 
     [NSThread sleepForTimeInterval:1.0]; // sleep for one second
     if ([self.delegate respondsToSelector:@selector(bigCalculator:madeProgressOnCalculation:)]) {
-        [self.delegate bigCalculator:self didFinishOperationWithResult:1.0];
+        [self.delegate bigCalculator:self didFinishOperationWithResult:1.0]; // 100% done
     }
     // we are done publish the result of our calculation...
-    [self.delegate bigCalculator:self didFinishOperationWithResult:(_number1 + _number2)];
+    [self.delegate bigCalculator:self didFinishOperationWithResult:(_number1 + _number2)]; 
 }
 
 @end
 ```
 
 
-
-Note that BigCalculator does not know anything about the registered object other that it implements the two methods defined in the BigCalculatorDelegate protocol.
+### notes:
+That BigCalculator does not know anything about the registered object other that it implements the two methods defined in the BigCalculatorDelegate protocol.
 
 Delegation is the most used pattern in iOS. It fits well and should be your default pattern for any in "child notifies parent" scenarios especially:
 * View -> ViewController
@@ -111,3 +111,7 @@ Delegation is the most used pattern in iOS. It fits well and should be your defa
 It does not work so well:
 * when an object needs to notify multiple objects e.g. our backend object just lose network connectivity and many different subsystems must adjust their UI as a result by becoming read-only
 * When the object that needs to be notified is your parent but many, many generation down e.g. you need to tell your great-great-great grand parent view controller you changed something. In this case, each one of the view controller in the chain would have to implement delegation to pass the information all the way down).
+
+### Examples in cocoa
+
+Evertything, everywhere, all the time (allmost). Pretty much all UI elements in iOS have a delegate property.
