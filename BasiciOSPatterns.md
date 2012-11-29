@@ -8,6 +8,10 @@
 
 ## delegation
 
+Define a protocol (interface) that describes the methods the delegate object must or should implement.
+The object that wants to get notified of a change registers itself as a delegate of a object via a property, 
+typically called delegate.
+
 ```objC
 @class BigCalculator1;
 
