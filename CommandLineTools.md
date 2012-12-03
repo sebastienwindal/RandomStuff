@@ -268,10 +268,10 @@ To check for a paricualar service
 ```bash
 dns-sb -B _WGen local
 ```
-output:
+
+Output:
 
 ```bash
-SWINDAL-MAC:Desktop swindal$ dns-sd -B _WGen local
 Browsing for _WGen._tcp.local
 DATE: ---Mon 03 Dec 2012---
 14:15:03.095  ...STARTING...
@@ -285,7 +285,7 @@ Timestamp     A/R Flags if Domain                    Service Type              I
 dns-sd -L name type domain
 ```
 
-the name parameter should be the last column of the output of the dns-sd -B command.
+The name parameter should be the last column of the output of the dns-sd -B command.
 
 for instance
 ```bash
@@ -315,7 +315,6 @@ dns-sd -q Sebastien-WGEN-iPad.local
 output:
 
 ```bash
-SWINDAL-MAC:Desktop swindal$ 
 DATE: ---Mon 03 Dec 2012---
 14:24:09.184  ...STARTING...
 Timestamp     A/R Flags if Name                             T   C Rdata
