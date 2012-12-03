@@ -322,3 +322,31 @@ Timestamp     A/R Flags if Name                             T   C Rdata
 ```
 
 more details: man dns-sd
+
+### check connection
+
+Finally check you can establish a TCP connection of the service using telnet. Note the IP address from the dns-sd -q command (169.254.4.196) and the port from the dns -L command (51290) and establish a basic TCP connection ysubg telnet:
+
+```bash
+telnet 169.254.4.196 51290
+```
+
+output
+```bash
+Trying 169.254.4.196...
+Connected to sebastien-wgen-ipad.local.
+Escape character is '^]'.
+CONTROL
+--WGEN--hdr
+bplist00$%T$topX$objectsX$versionY$archiver?R$0?? 
+ U$null?
+
+ZNS.objectsV$classWNS.keys?????Vpeerid?
+                                       YNS.string?_$BBDF4CD9-28C4-4345-91C7-AF4593F15568?$classesZ$classname?_NSMutableStringXNSStringXNSObject_NSMutableString?!#?"\NSDictionary\NSDictionary??_NSKeyedArchive(258:AGNY`hjlnpry~?????????? 
+                &+&=
+--WGEN--ctlr
+q^C^Cq^C 
+^C^]
+```
+
+(The way to disconnect from telnet is ^] followed by the quit command).
