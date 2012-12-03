@@ -276,7 +276,7 @@ Browsing for _WGen._tcp.local
 DATE: ---Mon 03 Dec 2012---
 14:15:03.095  ...STARTING...
 Timestamp     A/R Flags if Domain                    Service Type              Instance Name
-14:15:03.096  Add     2  4 local.                    _WGen._tcp.               *MATH2SESSION*
+14:15:03.096  Add     2  4 local.                    _WGen._tcp.               MATH2SESSION
 ```
 
 ### Retrieve connection info about a discovered service:
