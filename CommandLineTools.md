@@ -251,7 +251,7 @@ will run that command again.
 <a name="dns-sd" />
 ## Bonjour Service Discovery
 
-### browse abailable services
+### Browse available services
 
 ```bash
 dns-sd -B type domain
@@ -263,7 +263,7 @@ will discover a _certain number_ of "standard" services on the _local_ domain (n
 dns-sd -B . local
 ```
 
-To check for a paricualar service
+To check for a paricular service
 
 ```bash
 dns-sb -B _WGen local
@@ -276,7 +276,7 @@ Browsing for _WGen._tcp.local
 DATE: ---Mon 03 Dec 2012---
 14:15:03.095  ...STARTING...
 Timestamp     A/R Flags if Domain                    Service Type              Instance Name
-14:15:03.096  Add     2  4 local.                    _WGen._tcp.               MATH2SESSION
+14:15:03.096  Add     2  4 local.                    _WGen._tcp.               *MATH2SESSION*
 ```
 
 ### Retrieve connection info about a discovered service:
