@@ -247,3 +247,79 @@ running
 !394
 ```
 will run that command again.
+
+<a name="dns-sd" />
+## Bonjour Service Discovery
+
+### browse abailable services
+
+```bash
+dns-sd -B type domain
+```
+
+will discover a _certain number_ of "standard" services on the _local_ domain (not clear what defaults it peaks).
+
+```bash
+dns-sd -B . local
+```
+
+To check for a paricualar service
+
+```bash
+dns-sb -B _WGen local
+```
+output:
+
+```bash
+SWINDAL-MAC:Desktop swindal$ dns-sd -B _WGen local
+Browsing for _WGen._tcp.local
+DATE: ---Mon 03 Dec 2012---
+14:15:03.095  ...STARTING...
+Timestamp     A/R Flags if Domain                    Service Type              Instance Name
+14:15:03.096  Add     2  4 local.                    _WGen._tcp.               MATH2SESSION
+```
+
+### Retrieve connection info about a discovered service:
+
+```bash
+dns-sd -L name type domain
+```
+
+the name parameter should be the last column of the output of the dns-sd -B command.
+
+for instance
+```bash
+dns-sd -L MATH2SESSION _WGen local
+```
+
+output:
+```bash
+Lookup MATH2SESSION._WGen._tcp.local
+DATE: ---Mon 03 Dec 2012---
+14:20:30.902  ...STARTING...
+14:20:30.903  MATH2SESSION._WGen._tcp.local. can be reached at Sebastien-WGEN-iPad.local.:51290 (interface 4)
+```
+
+### Retrieve connection record 
+
+```bash
+dns-sd -q name
+```
+
+This time _name_ is the FQDN (fully qualified domain name) displayed in response to the dns-sd -L command. For instance:
+
+```bash
+dns-sd -q Sebastien-WGEN-iPad.local
+```
+
+output:
+
+```bash
+SWINDAL-MAC:Desktop swindal$ 
+DATE: ---Mon 03 Dec 2012---
+14:24:09.184  ...STARTING...
+Timestamp     A/R Flags if Name                             T   C Rdata
+14:24:09.185  Add     2  4 Sebastien-WGEN-iPad.local.       1   1 169.254.4.196
+```
+
+more details: man dns-sd
