@@ -8,6 +8,7 @@
 - [tcpdump](#tcpdump)
 - [sips](#sips)
 - [magic !](#magicbang)
+- [nc](nc#)
 
 <a name="xxd"/>
 ## xxd
@@ -322,4 +323,16 @@ Timestamp     A/R Flags if Name                             T   C Rdata
 ```
 
 more details: man dns-sd
+
+
+<a name="nc"/>
+## nc (netcat)
+
+The nc (or netcat) utility is used for just about anything under the sun involving TCP or UDP.  It can open TCP connections, send UDP packets, listen on arbitrary TCP and UDP ports, do port scanning, and deal with both IPv4 and IPv6.
+
+### send udp bytes over the network
+
+```bash
+echo "hello world" | nc -u localhost 1025
+```
 
