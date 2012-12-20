@@ -8,7 +8,7 @@
 - [tcpdump](#tcpdump)
 - [sips](#sips)
 - [magic !](#magicbang)
-- [nc](nc#)
+- [nc](#nc)
 
 <a name="xxd"/>
 ## xxd
