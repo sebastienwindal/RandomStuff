@@ -9,6 +9,7 @@
 - [sips](#sips)
 - [magic !](#magicbang)
 - [nc](#nc)
+- [npm](#npm)
 
 <a name="xxd"/>
 ## xxd
@@ -362,3 +363,16 @@ The nc (or netcat) utility is used for just about anything under the sun involvi
 echo "hello world" | nc -u localhost 1025
 ```
 
+
+<a name="npm"/>
+## npm
+
+Node Package manager.
+
+The syntax to add a dependency the *right* way:
+
+```bash
+npm install restify --save
+```
+
+Will also add the restify dependency in the package.json file...
