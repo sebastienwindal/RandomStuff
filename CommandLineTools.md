@@ -206,7 +206,7 @@ other options:
 
 Note you can also listen to local traffic by listening on lo0 (on MAC OSX)
 
-```
+```bash
 sudo tcpdump -X -n -i lo0 'tcp port 80'
 ```
 
