@@ -204,6 +204,12 @@ other options:
 * -x - same as -X but only dumps hex
 * -l - Make stdout line buffered.  use it if you are going to massage and filter output using grep or sed.
 
+Note you can also listen to local traffic by listening on lo0 (on MAC OSX)
+
+```
+sudo tcpdump -X -n -i lo0 'tcp port 80'
+```
+
 <a name="sips" />
 ## sips
 
