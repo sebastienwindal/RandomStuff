@@ -81,8 +81,6 @@ open -a "Sublime Text 2" file.txt
 <a name="curl"/>
 ## curl by example
 
-I really need to write this one...
-
 ### GET
 
 Simple GET
@@ -114,12 +112,32 @@ result:
 }
 ```
 
-### POST 
+### authentication
+
+```bash
+curl -u username:password http://someURL
+```
+
+Will include basic authentication to the request.
+
+### Bypass a self-signed cert warning
+
+```bash
+curl -k https://mydev-self-signed-dev-server
+```
+
+### POST / PUT
 
 Post url encoded data (-d or --data flag), in this case login to a Strava REST service:
 
 ```bash
 curl -X POST -d "email=xxx@xxx.com" -d "password=xxxxxx" https://www.strava.com/api/v2/authentication/login
+```
+
+PUT is nearly identical as POST
+
+```bash
+curl -X PUT -d "key1=value" -d "key2=value" https://someURL
 ```
 
 response:
@@ -159,6 +177,8 @@ Post Form data (useful to upload file) --form or -F flag:
 ```bash
 curl --form "fileupload=@filename.txt" http://example.com/resource.cgi
 ```
+
+
 
 <a name="tcpdump" />
 ## tcpdump
