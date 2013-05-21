@@ -137,6 +137,12 @@ Post url encoded data (-d or --data flag), in this case login to a Strava REST s
 curl -X POST -d "email=xxx@xxx.com" -d "password=xxxxxx" https://www.strava.com/api/v2/authentication/login
 ```
 
+Post raw json data in payload
+
+```bash
+curl -X POST -H "Content-Type: application/json" -d "{\"prop\":\"value\"}" http://someURL
+```
+
 PUT is nearly identical as POST
 
 ```bash
