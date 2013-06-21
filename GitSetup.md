@@ -13,3 +13,43 @@
 * run:
 ``git daemon --reuseaddr --base-path=. --export-all --verbose``
 * You can now pull it using ``git clone git://yourIP/ projectName`` a folder projectName will be created.
+
+## git std workflow
+
+* Creating a branch
+
+```
+git checkout -b myFeature
+```
+
+working, working, commiting, working, committing, pushing, working, commiting, pushing.
+
+* bring changes made by other in the main branch to myFeature branch
+
+```
+git checkout dev
+git pull
+git checkout myFeature
+git rebase dev
+```
+
+This gets the latest on dev, the rebase dev command "replays" the changes made to the dev branch on the myFeature branch.
+This is optional but it ensures I am not diverging too much from the main branch while working on my own custom branch,
+it should make the final merge less painful in theory. Good to do that daily or so...
+
+working, working, commiting, working, committing, pushing, working, commiting, pushing....
+
+Repeat this step until you are done with myFeature...
+
+* Pushing all changes to dev
+
+I am done with myFeature, I have checked in and pushed all my changes to the myFeature branch, I passed code review.
+Merge and push the myFeature branch to dev:
+
+```
+git checkout dev
+git pull
+git merge myFeature
+```
+
+fix conflicts, commit and push to dev. Done.
