@@ -25,7 +25,7 @@ so I decide I am going to work on my own branch.
 git checkout -b myFeature
 ```
 
-working, working, commiting, working, committing, pushing, working, commiting, pushing.
+_working, working, commiting, working, committing, pushing, working, commiting, pushing._
 
 ### 2. bring changes made by others in the dev branch to myFeature branch
 
@@ -47,7 +47,7 @@ This step is optional but it ensures I am not diverging too much from the main b
 working on my own custom branch, it should make the final merge less painful (in theory).
 Good to do that daily or so...
 
-working, working, commiting, working, committing, pushing, working, commiting, pushing....
+_working, working, commiting, working, committing, pushing, working, commiting, pushing._
 
 Repeat step 2 until you are done with myFeature...
 
