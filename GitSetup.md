@@ -16,6 +16,9 @@
 
 ## Standard git workflow
 
+Starting to work on a new feature called myFeature. It is a fairly big feature that will take me several days
+so I decide I am going to work on my own branch.
+
 ### 1. Creating a branch
 
 ```bash
@@ -27,7 +30,8 @@ working, working, commiting, working, committing, pushing, working, commiting, p
 ### 2. bring changes made by others in the dev branch to myFeature branch
 
 Unfortunately there are other people in the world, and they are pushing their crap to the dev branch too.
-Not just me writing useless code.
+It is not just me writing useless code, we have a whole army of developers with at least half of them
+writing code too.
 
 ```bash
 git checkout dev
