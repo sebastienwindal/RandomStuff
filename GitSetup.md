@@ -27,7 +27,7 @@ git checkout -b myFeature
 
 _working, working, commiting, working, committing, pushing, working, commiting, pushing._
 
-### 2. bring changes made by others in the dev branch to myFeature branch
+### 2. bring changes made by others on the dev branch to myFeature branch
 
 Unfortunately there are other people in the world, and they are pushing their crap to the dev branch too.
 It is not just me writing useless code, we have a whole army of developers with at least half of them
