@@ -50,7 +50,7 @@ Repeat this whole step until you are done with myFeature...
 * Pushing all changes to dev
 
 I am done with myFeature, I have checked in and pushed all my changes to the myFeature branch,
-I passed code review because --code reviews are useless-- I am a genius.
+I passed code review because -code reviews are useless- I am a genius.
 Merge and push the myFeature branch to dev:
 
 ```
