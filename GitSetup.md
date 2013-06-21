@@ -14,28 +14,30 @@
 ``git daemon --reuseaddr --base-path=. --export-all --verbose``
 * You can now pull it using ``git clone git://yourIP/ projectName`` a folder projectName will be created.
 
-## git std workflow
+## Standard git workflow
 
 * Creating a branch
 
-```
+```bash
 git checkout -b myFeature
 ```
 
 working, working, commiting, working, committing, pushing, working, commiting, pushing.
 
-* bring changes made by other in the main branch to myFeature branch
+* bring changes made by others to the dev branch to myFeature branch
 
-```
+```bash
 git checkout dev
 git pull
 git checkout myFeature
 git rebase dev
 ```
 
-This gets the latest on dev, the rebase dev command "replays" the changes made to the dev branch on the myFeature branch.
-This is optional but it ensures I am not diverging too much from the main branch while working on my own custom branch,
-it should make the final merge less painful in theory. Good to do that daily or so...
+First we get the latest on dev. Then the ```bash rebase dev``` command "replays" the changes made
+to the dev branch on the myFeature branch.
+
+This step is optional but it ensures I am not diverging too much from the main branch while working on my own custom branch,
+it should make the final merge less painful (in theory). Good to do that daily or so...
 
 working, working, commiting, working, committing, pushing, working, commiting, pushing....
 
