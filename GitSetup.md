@@ -16,7 +16,7 @@
 
 ## Standard git workflow
 
-* Creating a branch
+### 1. Creating a branch
 
 ```bash
 git checkout -b myFeature
@@ -24,7 +24,7 @@ git checkout -b myFeature
 
 working, working, commiting, working, committing, pushing, working, commiting, pushing.
 
-* bring changes made by others in the dev branch to myFeature branch
+### 2. bring changes made by others in the dev branch to myFeature branch
 
 Unfortunately there are other people in the world, and they are pushing their crap to the dev branch too.
 Not just me writing useless code.
@@ -45,9 +45,9 @@ Good to do that daily or so...
 
 working, working, commiting, working, committing, pushing, working, commiting, pushing....
 
-Repeat this whole step until you are done with myFeature...
+Repeat step 2 until you are done with myFeature...
 
-* Pushing all changes to dev
+### 3. Pushing all changes to dev
 
 I am done with myFeature, I have checked in and pushed all my changes to the myFeature branch,
 I passed code review because ~~code reviews are useless~~ I am abviously a genius.
