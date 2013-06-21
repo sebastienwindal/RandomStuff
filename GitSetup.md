@@ -40,7 +40,8 @@ git checkout myFeature
 git rebase dev
 ```
 
-First we get the latest on dev and then switch back to the myFeature branch. The ```bash git rebase dev```
+First we get the latest on dev and then switch back to the myFeature branch. The ```bash 
+git rebase dev```
 command "replays" the changes made to the dev branch on the myFeature branch.
 
 This step is optional but it ensures I am not diverging too much from the main branch while
@@ -57,7 +58,7 @@ I am done with myFeature, I have checked in and pushed all my changes to the myF
 I passed code review because ~~code reviews are useless~~ I am abviously a genius.
 Merge and push the myFeature branch to dev:
 
-```
+```bash
 git checkout dev
 git pull
 git merge myFeature
