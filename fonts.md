@@ -10,3 +10,4 @@ Fonts I like, most of them with licenses permissible enough to be included in an
 * [anonymous pro](http://www.marksimonson.com/fonts/view/anonymous-pro)
 * [open sans](http://www.google.com/fonts/specimen/Open+Sans)
 * [Quicksand](http://www.google.com/fonts/specimen/Quicksand)
+* [Comic Neue](http://comicneue.com/)
