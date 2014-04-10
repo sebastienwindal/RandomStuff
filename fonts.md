@@ -5,7 +5,7 @@ Fonts I like, most of them with licenses permissible enough to be included in an
 
 ![Ostrich Sans](OstrichSans.png)
 
-* [Oswald](http://www.fontsquirrel.com/fonts/oswald)
+# [Oswald](http://www.fontsquirrel.com/fonts/oswald)
 
 ![Oswald](Oswald.png)
 
