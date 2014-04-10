@@ -42,7 +42,7 @@ Fonts I like, most of them with licenses permissible enough to be included in an
 
 * [Raleway](https://www.google.com/fonts/specimen/Raleway)
 
-
+![Raleway](Raleway.png)
 
 * [League Gothic](https://github.com/theleagueof/league-gothic)
 
@@ -54,3 +54,4 @@ Fonts I like, most of them with licenses permissible enough to be included in an
 
 * [Hero](http://fontfabric.com/hero-free-font/)
 
+![Hero](Hero.png)
